@@ -7,10 +7,14 @@ public class Projectile : MonoBehaviour
     Vector3 playerPosition;
     [SerializeField] float moveBy = 15f;
 
+    void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     void Start() {
         playerPosition = player.transform.position;
     }
-
 
     void Update()
     {
