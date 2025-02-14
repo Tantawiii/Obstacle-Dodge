@@ -11,7 +11,9 @@ public class TriggerProjectile : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player"){
             foreach (GameObject i in projectile){
-                i?.SetActive(true);
+                if (i == null)
+                    continue;
+                i?.SetActive(true); //weirdly works for some prefabs and some do not!
             }
         }
     }
